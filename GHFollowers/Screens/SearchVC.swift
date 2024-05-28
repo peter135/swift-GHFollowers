@@ -22,7 +22,7 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-        setNavbar()
+//        setNavbar()
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()

@@ -13,7 +13,7 @@ class FavouriteListVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
 
-        setNavbar()
+//        setNavbar()
     }
     
     func setNavbar() {
