@@ -12,5 +12,7 @@ enum GFError:String,Error {
     case unableToComplete = "unable to complete"
     case invalidResponse = "invalid response"
     case invalidData = "invalid data"
+    case unableToFavourite = "unable to retrieve data"
+    case alreadyInFavourites = "already in favourites"
 
 }
