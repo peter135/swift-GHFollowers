@@ -40,6 +40,9 @@
 		184655112C08237200DC6737 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184655102C08237200DC6737 /* String+Ext.swift */; };
 		184655132C0844DF00DC6737 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184655122C0844DF00DC6737 /* PersistenceManager.swift */; };
 		184655152C08621B00DC6737 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184655142C08621B00DC6737 /* FavoriteCell.swift */; };
+		184655182C088A2E00DC6737 /* GFTabbarControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184655172C088A2E00DC6737 /* GFTabbarControllerVC.swift */; };
+		1846551A2C08A38C00DC6737 /* GFAlertContainterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184655192C08A38C00DC6737 /* GFAlertContainterView.swift */; };
+		1846551C2C08AC0700DC6737 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846551B2C08AC0700DC6737 /* GFDataLoadingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,9 @@
 		184655102C08237200DC6737 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		184655122C0844DF00DC6737 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		184655142C08621B00DC6737 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		184655172C088A2E00DC6737 /* GFTabbarControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabbarControllerVC.swift; sourceTree = "<group>"; };
+		184655192C08A38C00DC6737 /* GFAlertContainterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainterView.swift; sourceTree = "<group>"; };
+		1846551B2C08AC0700DC6737 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,7 @@
 		184654E02C0579FA00DC6737 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				184655162C0889FE00DC6737 /* TabbarController */,
 				184654FA2C0684A800DC6737 /* Views */,
 				184654F92C06843500DC6737 /* TextFIelds */,
 				184654F82C06842200DC6737 /* Buttons */,
@@ -221,6 +228,7 @@
 				1846550D2C074AF000DC6737 /* ItemInfoVCs */,
 				184654DB2C0566F200DC6737 /* GFAlertVC.swift */,
 				184654FF2C06D71600DC6737 /* GFUserInfoHeaderVC.swift */,
+				1846551B2C08AC0700DC6737 /* GFDataLoadingVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -254,6 +262,7 @@
 			children = (
 				184654FB2C0684C500DC6737 /* GFEmptyView.swift */,
 				184655052C071E5C00DC6737 /* GFItemInfoView.swift */,
+				184655192C08A38C00DC6737 /* GFAlertContainterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +275,14 @@
 				1846550B2C074A8100DC6737 /* GFFollowerItemVC.swift */,
 			);
 			path = ItemInfoVCs;
+			sourceTree = "<group>";
+		};
+		184655162C0889FE00DC6737 /* TabbarController */ = {
+			isa = PBXGroup;
+			children = (
+				184655172C088A2E00DC6737 /* GFTabbarControllerVC.swift */,
+			);
+			path = TabbarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,12 +361,15 @@
 				184655112C08237200DC6737 /* String+Ext.swift in Sources */,
 				1846550C2C074A8100DC6737 /* GFFollowerItemVC.swift in Sources */,
 				184654CE2C04615100DC6737 /* SearchVC.swift in Sources */,
+				1846551C2C08AC0700DC6737 /* GFDataLoadingVC.swift in Sources */,
 				184654DE2C0575E400DC6737 /* UIViewController+Ext.swift in Sources */,
 				184654F42C05E5F300DC6737 /* UIHelper.swift in Sources */,
 				184655082C0735E800DC6737 /* GFItemInfoVC.swift in Sources */,
 				184655042C06DF6D00DC6737 /* Constants.swift in Sources */,
 				184654F22C05C41900DC6737 /* GFAvatarImageView.swift in Sources */,
+				184655182C088A2E00DC6737 /* GFTabbarControllerVC.swift in Sources */,
 				184655022C06D82E00DC6737 /* GFSecondaryTitlelabel.swift in Sources */,
+				1846551A2C08A38C00DC6737 /* GFAlertContainterView.swift in Sources */,
 				1846550A2C0748E800DC6737 /* GFReopItemVC.swift in Sources */,
 				184654FC2C0684C500DC6737 /* GFEmptyView.swift in Sources */,
 				184655152C08621B00DC6737 /* FavoriteCell.swift in Sources */,

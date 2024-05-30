@@ -14,6 +14,8 @@ class SearchVC: UIViewController {
     let userNameTextField   = GFTextfield()
     let callToActionButton  = GFButton(backgroundColor: .green, title: "Get Followers")
     
+    var logoImageViewTopConstraint:NSLayoutConstraint!
+    
     var isUserNameEntered:Bool{
         return !userNameTextField.text!.isEmpty
     }
@@ -22,44 +24,20 @@ class SearchVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         
-//        setNavbar()
         configureLogoImageView()
         configureTextField()
         configureCallToActionButton()
         createDismissKeyboardTapGesture()
     }
     
-    func setNavbar() {
-        let textAtt = [NSAttributedString.Key.foregroundColor:UIColor.black,
-                       NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 19)]
-        
-        if #available(iOS 15.0, *) {
-            let navBarApp = UINavigationBarAppearance()
-            navBarApp.backgroundColor = .white
-            navBarApp.shadowColor = .white
-            navBarApp.titleTextAttributes = textAtt as [NSAttributedString.Key : Any]
-            self.navigationController?.navigationBar.scrollEdgeAppearance = navBarApp
-            self.navigationController?.navigationBar.standardAppearance = navBarApp
-            
-        }else{
-            self.navigationController?.navigationBar.barTintColor = .white
-//            self.navigationController?.navigationBar.shadowImage = UIImage()
-            self.navigationController?.navigationBar.titleTextAttributes = textAtt as [NSAttributedString.Key : Any]
-//            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        }
-        
-//        self.navigationController?.navigationBar.isTranslucent = false
-//        self.navigationController?.navigationBar.tintColor = .black
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
-
+        userNameTextField.text = ""
     }
     
     func createDismissKeyboardTapGesture(){
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         view.addGestureRecognizer(tap)
     }
     
@@ -71,19 +49,22 @@ class SearchVC: UIViewController {
             return
         }
         
-        let followerListVC = FollowersListVC()
-        followerListVC.userName = userNameTextField.text
-        followerListVC.title = userNameTextField.text
+        userNameTextField.resignFirstResponder()
+        
+        let followerListVC = FollowersListVC(username: userNameTextField.text!)
         navigationController?.pushViewController(followerListVC, animated: true)
     }
     
     func configureLogoImageView() {
         view.addSubview(logoImageView)
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
-        logoImageView.image = UIImage(named: "gh-logo")
+        logoImageView.image = Images.ghLogo
+        
+        let topConstraintConstant:CGFloat = DeviceTypes.isIphoneSE || DeviceTypes.isIphone8Zoomed ? 20:80
+        logoImageViewTopConstraint = logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: topConstraintConstant)
+        logoImageViewTopConstraint.isActive = true
         
         NSLayoutConstraint.activate([
-            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: 80),
             logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoImageView.heightAnchor.constraint(equalToConstant: 200),
             logoImageView.widthAnchor.constraint(equalToConstant: 200)
