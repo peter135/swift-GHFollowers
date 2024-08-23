@@ -43,6 +43,7 @@
 		184655182C088A2E00DC6737 /* GFTabbarControllerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184655172C088A2E00DC6737 /* GFTabbarControllerVC.swift */; };
 		1846551A2C08A38C00DC6737 /* GFAlertContainterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184655192C08A38C00DC6737 /* GFAlertContainterView.swift */; };
 		1846551C2C08AC0700DC6737 /* GFDataLoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846551B2C08AC0700DC6737 /* GFDataLoadingVC.swift */; };
+		1846551E2C09726B00DC6737 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1846551D2C09726B00DC6737 /* UIView+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		184655172C088A2E00DC6737 /* GFTabbarControllerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFTabbarControllerVC.swift; sourceTree = "<group>"; };
 		184655192C08A38C00DC6737 /* GFAlertContainterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFAlertContainterView.swift; sourceTree = "<group>"; };
 		1846551B2C08AC0700DC6737 /* GFDataLoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GFDataLoadingVC.swift; sourceTree = "<group>"; };
+		1846551D2C09726B00DC6737 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 				184654DD2C0575E400DC6737 /* UIViewController+Ext.swift */,
 				184655102C08237200DC6737 /* String+Ext.swift */,
 				1846550E2C08218A00DC6737 /* Date+Ext.swift */,
+				1846551D2C09726B00DC6737 /* UIView+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				184654EA2C059BC300DC6737 /* NetworkManager.swift in Sources */,
 				184654D02C04616500DC6737 /* FavouriteListVC.swift in Sources */,
 				184654B82C0453C600DC6737 /* AppDelegate.swift in Sources */,
+				1846551E2C09726B00DC6737 /* UIView+Ext.swift in Sources */,
 				184654BA2C0453C600DC6737 /* SceneDelegate.swift in Sources */,
 				184654FE2C06BF9E00DC6737 /* UserInfoVC.swift in Sources */,
 			);

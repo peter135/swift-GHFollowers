@@ -24,6 +24,7 @@ class FollowersListVC: GFDataLoadingVC {
     var page = 1
     var hasMoreFollowers = true
     var isSearching = false
+    var isLoadingMoreFollowers = false
     
     var collectionView:UICollectionView!
     var dataSource:UICollectionViewDiffableDataSource<Section,Follower>!
@@ -78,6 +79,7 @@ class FollowersListVC: GFDataLoadingVC {
     }
     
     func getFollowers(username:String, page:Int){
+        isLoadingMoreFollowers = true
         showLoadingView()
         NetworkManager.shared.getFollowers(for: userName, page: page) {[weak self] result in
             guard let self = self else {return}
@@ -101,6 +103,8 @@ class FollowersListVC: GFDataLoadingVC {
                 case .failure(let error):
                     self.presentGFAlertOnMainThread(title: "bad stuff happened", message: error.rawValue, buttonTitle: "OK")
             }
+            
+            isLoadingMoreFollowers = false
         }
     }
     
@@ -158,7 +162,7 @@ extension FollowersListVC:UICollectionViewDelegate {
         let height         = scrollView.frame.size.height
         
         if offsetY > contentHeight - height {
-            guard hasMoreFollowers else {return}
+            guard hasMoreFollowers, !isLoadingMoreFollowers else {return}
             page += 1
             getFollowers(username:userName,page: page)
         }
@@ -200,7 +204,7 @@ extension FollowersListVC: FollowerListVCDelegate {
         page = 1
         followers.removeAll()
         filteredFollowers.removeAll()
-        collectionView.setContentOffset(.zero, animated: true)
+        collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
         getFollowers(username: username, page: page)
     }
 }
